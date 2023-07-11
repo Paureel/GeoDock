@@ -62,7 +62,7 @@ def dock(
         chains=chains,
         delims=delims
     )
-    print(f"Completed docking in {time() - start_time:.2f} seconds.")
+    print(f"Completed docking in {time() - start_time:.2f} seconds..")
     #-----Docking end-----#
 
     #-----Refine start-----#
