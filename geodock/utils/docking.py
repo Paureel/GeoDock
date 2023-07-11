@@ -15,7 +15,7 @@ def dock(
     do_refine=True,
     use_openmm=True,
 ):
-    #-----Docking Start-----#
+    #-----Docking Start Now-----#
     start_time = time()
 
     # get prediction
@@ -23,7 +23,9 @@ def dock(
 
     # coords and plddt
     coords = model_out.coords.squeeze()
+    print("calculating plddt")
     plddt = compute_plddt(model_out.lddt_logits).squeeze()
+    print(plddt)
     coords1, coords2 = coords.split([len(seq1), len(seq2)], dim=0)
     full_coords = torch.cat([get_full_coords(coords1), get_full_coords(coords2)], dim=0)
 
